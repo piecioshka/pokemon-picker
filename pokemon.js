@@ -1,4 +1,4 @@
-(function () {
+(function (global) {
     'use strict';
 
     var pokemonList = [
@@ -160,13 +160,31 @@
         return parseInt((Math.random() * (finish - start) + start).toFixed(), 10);
     }
 
-    // Randomly select a pokemon index.
-    var pokemonIndex = random(0, pokemonList.length - 1);
+    function getNext() {
+        if (!pokemonList.length) {
+            throw new Error('Sorry. No pokemon left.');
+        }
 
-    // Get selected pokemon.
-    var pokemon = pokemonList[pokemonIndex];
+        // Randomly select a pokemon index.
+        var pokemonIndex = random(0, pokemonList.length - 1);
 
+        // Get selected pokemon.
+        var chosenPokemon = pokemonList[pokemonIndex];
+
+        // Delete it from the list.
+        pokemonList.splice(pokemonIndex, 1);
+        return chosenPokemon;
+    }
+
+    var pokemon = getNext();
     // Print them.
     console.log(pokemon.index + ': ' + pokemon.name + ' (' + pokemon.types.join(', ') + ')');
 
-}());
+    global.pokemonPicker = {
+        getNext: getNext,
+        getSize: function () {
+            return pokemonList.length;
+        },
+        pokemon: pokemon
+    };
+}(this));
