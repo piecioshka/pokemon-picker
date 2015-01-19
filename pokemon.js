@@ -1,6 +1,10 @@
 (function (global) {
     'use strict';
 
+    // Single row from `pokemonList`.
+    var pokemon;
+
+    // List of Pokémon. For now it is only with first generation.
     var pokemonList = [
         { index: '#001', name: 'Bulbasaur', types: ['Grass', 'Poison'] },
         { index: '#002', name: 'Ivysaur', types: ['Grass', 'Poison'] },
@@ -160,6 +164,7 @@
         return parseInt((Math.random() * (finish - start) + start).toFixed(), 10);
     }
 
+    // Returns new Pokémon form list. Check that list is empty.
     function getNext() {
         if (!pokemonList.length) {
             throw new Error('Sorry. No pokemon left.');
@@ -173,18 +178,33 @@
 
         // Delete it from the list.
         pokemonList.splice(pokemonIndex, 1);
+
         return chosenPokemon;
     }
 
-    var pokemon = getNext();
-    // Print them.
+    // Returns how much Pokémon-s left.
+    function getSize() {
+        return pokemonList.length;
+    }
+
+    // Returns selected Pokémon.
+    function getPokemon() {
+        return pokemon;
+    }
+
+    // Choose new Pokémon from list.
+    pokemon = getNext();
+
+    // Print it.
     console.log(pokemon.index + ': ' + pokemon.name + ' (' + pokemon.types.join(', ') + ')');
 
-    global.pokemonPicker = {
+    // Create singleton module with some methods.
+    var PokemonPicker = {
         getNext: getNext,
-        getSize: function () {
-            return pokemonList.length;
-        },
-        pokemon: pokemon
+        getSize: getSize,
+        getPokemon: getPokemon
     };
+
+    // Exports `PokemonPicker`.
+    return (global.PokemonPicker = PokemonPicker);
 }(this));

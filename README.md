@@ -24,6 +24,11 @@ $ node pokemon.js
 ```
 After that you will be see a randomly selecting Pokémon!
 
+## Contributors
+
+ - [@piecioshka](http://github.com/piecioshka)
+ - [@adamminiuk](http://github.com/adamminiuk)
+
 ## License
 
 [The MIT License](http://piecioshka.mit-license.org)
