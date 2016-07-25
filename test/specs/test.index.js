@@ -16,7 +16,6 @@ describe('Working properly', function () {
             expect(api.at(9182319824)).toEqual(undefined);
             expect(api.at(null)).toEqual(undefined);
             expect(api.at('a')).toEqual(undefined);
-            expect(api.at(152)).toEqual(undefined);
         });
 
         it('should returns right creature', function () {
@@ -24,6 +23,8 @@ describe('Working properly', function () {
             expect(pokemon.name).toEqual('Charizard');
             pokemon = api.at(151);
             expect(pokemon.name).toEqual('Mew');
+            pokemon = api.at(333);
+            expect(pokemon.name).toEqual('Swablu');
         });
     });
 
@@ -37,14 +38,14 @@ describe('Working properly', function () {
             Math.random = constant(1);
 
             var lastCreature = api.randomize();
-            expect(lastCreature.name).toEqual('Mew');
+            expect(lastCreature.name).toEqual('Magearna');
         });
     });
 
     describe('method: size', function () {
         it('should return number of items', function () {
             expect(api.size()).toEqual(jasmine.any(Number));
-            expect(api.size()).toEqual(151); // first generation
+            expect(api.size()).toEqual(756); // all known pokemons
         });
     })
 });

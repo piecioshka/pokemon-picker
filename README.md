@@ -1,3 +1,7 @@
+# pokemon-picker ([npm](https://www.npmjs.com/package/pokemon-picker))
+
+> :art: Pick your Pokémon from Pokédex!
+
 ```
               ______                                           _____      ______              
 _________________  /_____________ ________________     ___________(_)________  /______________
@@ -15,8 +19,9 @@ I had simple an idea. I will create pokemon random getter.<br />
 
 **So I make this project to randomly select Pokémon.**
 
-Current list contains only first generation.<br />
 I use [bulbapedia.bulbagarden.net][0] to get index, name and types.<br />
+
+**ALL pokemons are available! All 756 items.**
 
 ## Install
 
@@ -51,15 +56,31 @@ Return number of Pokémon's, which are available in database.
 ```javascript
 var pokemon = require('pokemon-picker');
 
-pokemon.at(0); // return { "name": "Bulbasaur", "types": ["Grass", "Poison"] }
-pokemon.at(76); // return { "name": "Golem", "types": ["Rock", "Ground"] }
-pokemon.at(151); // return { "name": "Mew", "types": ["Psychic"] }
+pokemon.at(0); // return { "index": 1, "name": "Bulbasaur", "types": ["Grass", "Poison"] }
+pokemon.at(76); // return { "index": 76, "name": "Golem", "types": ["Rock", "Ground"] }
+pokemon.at(151); // return { "index": 151, "name": "Mew", "types": ["Psychic"] }
 
 pokemon.size() // 151 (first geneation is available)
 
-pokemon.randomize() // returns { "name": "Electabuzz", "types": ["Electric"] }
-pokemon.randomize() // returns { "name": "Alakazam", "types": ["Psychic"] }
-pokemon.randomize() // returns { "name": "Ninetales", "types": ["Fire"] }
+pokemon.randomize() // returns { "index": 135, "name": "Electabuzz", "types": ["Electric"] }
+pokemon.randomize() // returns { "index": 65, "name": "Alakazam", "types": ["Psychic"] }
+pokemon.randomize() // returns { "index": 38, "name": "Ninetales", "types": ["Fire"] }
+```
+
+## Unit tests
+
+Use Jasmine to create that type of tests.
+
+```
+npm test
+```
+
+## Code coverage (100%)
+
+Use Istanbul to get code coverage ratio.
+
+```
+npm run coverage
 ```
 
 ## License
