@@ -1,0 +1,11 @@
+{
+    "name": "pokemon-picker",
+    "scripts": {
+        "test": "jasmine JASMINE_CONFIG_PATH=test/jasmine.json",
+        "coverage": "istanbul cover --include-all-sources jasmine JASMINE_CONFIG_PATH=test/jasmine.json"
+    },
+    "devDependencies": {
+        "istanbul": "^0.4.4",
+        "jasmine": "^2.4.1"
+    }
+}
