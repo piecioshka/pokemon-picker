@@ -3,6 +3,7 @@
 ![](https://img.shields.io/npm/v/pokemon-picker.svg)
 ![](https://img.shields.io/npm/dt/pokemon-picker.svg)
 ![](https://img.shields.io/npm/l/pokemon-picker.svg)
+[![Travis](https://img.shields.io/travis/piecioshka/pokemon-picker.svg?maxAge=2592000)](https://travis-ci.org/piecioshka/pokemon-picker)
 
 > :art: Pick your Pokémon from Pokédex!
 
@@ -24,7 +25,7 @@ So I make this project to randomly select Pokémon.
 
 I use [bulbapedia.bulbagarden.net][0] to get index, name and types.<br />
 
-**ALL pokemons are available! All 756 items.**
+**ALL 756 pokemons are available!**
 
 ## Install
 
@@ -78,7 +79,7 @@ Use Jasmine to create that type of tests.
 npm test
 ```
 
-## Code coverage [![Travis](https://img.shields.io/travis/piecioshka/pokemon-picker.svg?maxAge=2592000)](https://travis-ci.org/piecioshka/pokemon-picker)
+## Code coverage
 
 Use Istanbul to get code coverage ratio.
 
