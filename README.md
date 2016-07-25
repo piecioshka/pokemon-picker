@@ -1,5 +1,9 @@
 # pokemon-picker ([npm](https://www.npmjs.com/package/pokemon-picker))
 
+![](https://img.shields.io/npm/v/pokemon-picker.svg)
+![](https://img.shields.io/npm/dt/pokemon-picker.svg)
+![](https://img.shields.io/npm/l/pokemon-picker.svg)
+
 > :art: Pick your Pokémon from Pokédex!
 
 ```
@@ -16,8 +20,7 @@ _  .___/\____//_/|_| \___//_/ /_/ /_/\____//_/ /_/     _  .___//_/  \___/ /_/|_|
 
 I always have a problem for new project name.<br />
 I had simple an idea. I will create pokemon random getter.<br />
-
-**So I make this project to randomly select Pokémon.**
+So I make this project to randomly select Pokémon.
 
 I use [bulbapedia.bulbagarden.net][0] to get index, name and types.<br />
 
@@ -67,7 +70,7 @@ pokemon.randomize() // returns { "index": 65, "name": "Alakazam", "types": ["Psy
 pokemon.randomize() // returns { "index": 38, "name": "Ninetales", "types": ["Fire"] }
 ```
 
-## Unit tests
+## Unit tests ![](https://img.shields.io/badge/tests-4/4-brightgreen.svg)
 
 Use Jasmine to create that type of tests.
 
@@ -75,7 +78,7 @@ Use Jasmine to create that type of tests.
 npm test
 ```
 
-## Code coverage (100%)
+## Code coverage ![](https://img.shields.io/badge/coverage-100%-ff69b4.svg)
 
 Use Istanbul to get code coverage ratio.
 

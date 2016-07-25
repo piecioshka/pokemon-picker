@@ -7,13 +7,23 @@
         "email": "piecioshka@gmail.com",
         "url": "http://piecioshka.pl/"
     },
+    "contributors": [
+        "Piotr Kowalski <piecioshka@gmail.com> (http://github.com/piecioshka)",
+        "Adam Miniuk <adam.miniuk@gamil.com> (http://github.com/adamminiuk)"
+    ],
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/piecioshka/pokemon-picker.git"
     },
+    "scripts": {
+        "test": "jasmine JASMINE_CONFIG_PATH=test/jasmine.json",
+        "coverage": "istanbul cover --include-all-sources jasmine JASMINE_CONFIG_PATH=test/jasmine.json"
+    },
+    "bugs": {
+        "url": "https://github.com/piecioshka/pokemon-picker/issues"
+    },
     "files": [
         "pokedex",
-        "AUTHORS.md",
         "index.js",
         "package.json",
         "README.md"
@@ -30,10 +40,6 @@
         "catcher",
         "pokéball"
     ],
-    "scripts": {
-        "test": "jasmine JASMINE_CONFIG_PATH=test/jasmine.json",
-        "coverage": "istanbul cover --include-all-sources jasmine JASMINE_CONFIG_PATH=test/jasmine.json"
-    },
     "devDependencies": {
         "istanbul": "^0.4.4",
         "jasmine": "^2.4.1"
