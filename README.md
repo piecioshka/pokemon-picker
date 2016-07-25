@@ -64,7 +64,7 @@ pokemon.at(0); // return { "index": 1, "name": "Bulbasaur", "types": ["Grass", "
 pokemon.at(76); // return { "index": 76, "name": "Golem", "types": ["Rock", "Ground"] }
 pokemon.at(151); // return { "index": 151, "name": "Mew", "types": ["Psychic"] }
 
-pokemon.size() // 151 (first geneation is available)
+pokemon.size() // 756 (all known creatures)
 
 pokemon.randomize() // returns { "index": 135, "name": "Electabuzz", "types": ["Electric"] }
 pokemon.randomize() // returns { "index": 65, "name": "Alakazam", "types": ["Psychic"] }
