@@ -78,7 +78,7 @@ Use Jasmine to create that type of tests.
 npm test
 ```
 
-## Code coverage ![](https://img.shields.io/badge/coverage-100%-ff69b4.svg)
+## Code coverage [![Travis](https://img.shields.io/travis/piecioshka/pokemon-picker.svg?maxAge=2592000)](https://travis-ci.org/piecioshka/pokemon-picker)
 
 Use Istanbul to get code coverage ratio.
 
