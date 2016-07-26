@@ -2,10 +2,20 @@
 
 ![](https://img.shields.io/npm/v/pokemon-picker.svg)
 ![](https://img.shields.io/npm/dt/pokemon-picker.svg)
-![](https://img.shields.io/npm/l/pokemon-picker.svg)
+![](https://img.shields.io/badge/tests-10/10-brightgreen.svg)
 [![Travis](https://img.shields.io/travis/piecioshka/pokemon-picker.svg?maxAge=2592000)](https://travis-ci.org/piecioshka/pokemon-picker)
 
 > :art: Pick your Pokémon from Pokédex!
+
+![](./images/logo.png)
+
+I always have a problem for new project name.<br />
+I had simple an idea. I will create pokemon random getter.<br />
+So I make this project to randomly select Pokémon.
+
+I use [bulbapedia.bulbagarden.net][0] to get index, name and types.<br />
+
+**ALL 756 Pokemons are available!**
 
 ```
               ______                                           _____      ______              
@@ -19,18 +29,10 @@ _  .___/\____//_/|_| \___//_/ /_/ /_/\____//_/ /_/     _  .___//_/  \___/ /_/|_|
 
 ----
 
-I always have a problem for new project name.<br />
-I had simple an idea. I will create pokemon random getter.<br />
-So I make this project to randomly select Pokémon.
-
-I use [bulbapedia.bulbagarden.net][0] to get index, name and types.<br />
-
-**ALL 756 Pokemons are available!**
-
 ## Install
 
 ```
-npm install pokemon-picker
+$ npm install pokemon-picker
 ```
 
 ## Usage (CLI)
@@ -38,19 +40,19 @@ npm install pokemon-picker
 After global installation:
 
 ```
-npm install -g pokemon-picker
+$ npm install -g pokemon-picker
 ```
 
 ... you can CHOOSE random Pokémon by simple command:
 
 ```
-pokemon-picker
+$ pokemon-picker
 ```
 
 ... or print help with details:
 
 ```
-$ pokemon-picker --help                                                                                                                   ~/projects/pokemon-picker
+$ pokemon-picker --help
 
   Usage: pokemon-picker [options]
 
@@ -60,30 +62,55 @@ $ pokemon-picker --help                                                         
 
     -h, --help     output usage information
     -V, --version  output the version number
-    -a [index]     Get Pokémon by index
+    -a             Get whole list of Pokémons
+    -i [index]     Get Pokémon by index
+    -n [name]      Get Pokémon by name
+    -t [type]      Get Pokémons by type
     -r             Return random Pokémon
     -s             Return number of database size
+    
 ```
 
 ## Usage (in code)
 
 ```javascript
-var picker = require('pokemon-picker');
+var pokemon = require('pokemon-picker');
 ```
 
-### `picker.at(index: number): Pokémon`
+### `pokemon.all(): Array<Pokémon>`
 
-Return "Pokémon" or `undefined` value.
+Returns list of Pokémons.
+
+### `pokemon.at(index: number): Pokémon`
+### `pokemon.byIndex(index: number): Pokémon`
+
+Return Pokémon object or `undefined` value.
 
 Parameters:
 
  * `index` - number of create from the list.
 
-### `picker.randomize(): Pokémon`
+### `pokemon.byName(name: string): Pokémon`
+
+Returns Pokémon object or `undefined` value.
+
+Parameters:
+
+ * `name` - Pokémon name.
+
+### `pokemon.byType(type: string): Array<Pokémon>`
+
+Returns list of Pokémons with type.
+
+Parameters:
+
+ * `type` - Pokémon type.
+
+### `pokemon.randomize(): Pokémon`
 
 Return random "Pokémon" from whole list.
 
-### `picker.size(): number`
+### `pokemon.size(): number`
 
 Return number of Pokémon's, which are available in database.
 
@@ -92,23 +119,28 @@ Return number of Pokémon's, which are available in database.
 ```javascript
 var pokemon = require('pokemon-picker');
 
-pokemon.at(0); // return { "index": 1, "name": "Bulbasaur", "types": ["Grass", "Poison"] }
-pokemon.at(76); // return { "index": 76, "name": "Golem", "types": ["Rock", "Ground"] }
-pokemon.at(151); // return { "index": 151, "name": "Mew", "types": ["Psychic"] }
+pokemon.all() // ... returns whole list of Pokémons
+
+pokemon.byIndex(0); // => { "index": 1, "name": "Bulbasaur", "types": ["Grass", "Poison"] }
+pokemon.at(76); // => { "index": 76, "name": "Golem", "types": ["Rock", "Ground"] }
+pokemon.byIndex(151); // => { "index": 151, "name": "Mew", "types": ["Psychic"] }
+
+pokemon.byName("Pikachu"); // => { name: 'Pikachu', types: [ 'Electric' ], index: 25 }
+pokemon.byType("Fire"); // => ... list of Fire Pokémons
 
 pokemon.size() // 756 (all known creatures)
 
-pokemon.randomize() // returns { "index": 135, "name": "Electabuzz", "types": ["Electric"] }
-pokemon.randomize() // returns { "index": 65, "name": "Alakazam", "types": ["Psychic"] }
-pokemon.randomize() // returns { "index": 38, "name": "Ninetales", "types": ["Fire"] }
+pokemon.randomize() // => { "index": 135, "name": "Electabuzz", "types": ["Electric"] }
+pokemon.randomize() // => { "index": 65, "name": "Alakazam", "types": ["Psychic"] }
+pokemon.randomize() // => { "index": 38, "name": "Ninetales", "types": ["Fire"] }
 ```
 
-## Unit tests ![](https://img.shields.io/badge/tests-4/4-brightgreen.svg)
+## Unit tests
 
 Use Jasmine to create that type of tests.
 
 ```
-npm test
+$ npm test
 ```
 
 ## Code coverage
@@ -116,7 +148,7 @@ npm test
 Use Istanbul to get code coverage ratio.
 
 ```
-npm run coverage
+$ npm run coverage
 ```
 
 ## License

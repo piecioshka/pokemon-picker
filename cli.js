@@ -15,7 +15,10 @@ function display(method) {
 program
     .version(pkg.version)
     .description(pkg.description)
-    .option('-a [index]', 'Get Pokémon by index', display(picker.at))
+    .option('-a', 'Get whole list of Pokémons', display(picker.all))
+    .option('-i [index]', 'Get Pokémon by index', display(picker.byIndex))
+    .option('-n [name]', 'Get Pokémon by name', display(picker.byName))
+    .option('-t [type]', 'Get Pokémons by type', display(picker.byType))
     .option('-r', 'Return random Pokémon', display(picker.randomize))
     .option('-s', 'Return number of database size', display(picker.size))
     .parse(process.argv);
