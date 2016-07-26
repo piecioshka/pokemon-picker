@@ -25,7 +25,7 @@ So I make this project to randomly select Pokémon.
 
 I use [bulbapedia.bulbagarden.net][0] to get index, name and types.<br />
 
-**ALL 756 pokemons are available!**
+**ALL 756 Pokemons are available!**
 
 ## Install
 
@@ -33,7 +33,39 @@ I use [bulbapedia.bulbagarden.net][0] to get index, name and types.<br />
 npm install pokemon-picker
 ```
 
-## Usage
+## Usage (CLI)
+
+After global installation:
+
+```
+npm install -g pokemon-picker
+```
+
+... you can CHOOSE random Pokémon by simple command:
+
+```
+pokemon-picker
+```
+
+... or print help with details:
+
+```
+$ pokemon-picker --help                                                                                                                   ~/projects/pokemon-picker
+
+  Usage: pokemon-picker [options]
+
+  Pick your Pokémon from Pokédex!
+
+  Options:
+
+    -h, --help     output usage information
+    -V, --version  output the version number
+    -a [index]     Get Pokémon by index
+    -r             Return random Pokémon
+    -s             Return number of database size
+```
+
+## Usage (in code)
 
 ```javascript
 var picker = require('pokemon-picker');
