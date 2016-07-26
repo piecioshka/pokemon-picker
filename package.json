@@ -1,7 +1,7 @@
 {
     "name": "pokemon-picker",
-    "version": "1.0.0",
-    "description": ":art: Pick your Pokémon from Pokédex!",
+    "version": "1.1.0",
+    "description": "Pick your Pokémon from Pokédex!",
     "author": {
         "name": "Piotr Kowalski",
         "email": "piecioshka@gmail.com",
@@ -16,8 +16,9 @@
         "url": "git+ssh://git@github.com/piecioshka/pokemon-picker.git"
     },
     "scripts": {
+        "clear": "rm -rf node_modules/ npm-debug.log coverage/",
         "test": "jasmine JASMINE_CONFIG_PATH=test/jasmine.json",
-        "coverage": "istanbul cover --include-all-sources jasmine JASMINE_CONFIG_PATH=test/jasmine.json"
+        "coverage": "istanbul cover jasmine JASMINE_CONFIG_PATH=test/jasmine.json"
     },
     "bugs": {
         "url": "https://github.com/piecioshka/pokemon-picker/issues"
@@ -41,9 +42,11 @@
         "pokéball"
     ],
     "devDependencies": {
+        "commander": "^2.9.0",
         "istanbul": "^0.4.4",
         "jasmine": "^2.4.1"
     },
+    "bin": "./cli.js",
     "main": "./index.js",
     "license": "MIT"
 }
