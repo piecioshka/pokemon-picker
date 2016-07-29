@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/pokemon-picker.svg)](https://badge.fury.io/js/pokemon-picker)
 ![](https://img.shields.io/npm/dt/pokemon-picker.svg)
 [![Travis](https://img.shields.io/travis/piecioshka/pokemon-picker.svg?maxAge=2592000)](https://travis-ci.org/piecioshka/pokemon-picker)
+[![Coverage Status](https://coveralls.io/repos/github/piecioshka/pokemon-picker/badge.svg?branch=master)](https://coveralls.io/github/piecioshka/pokemon-picker?branch=master)
 
 > :art: Pick your Pokémon from Pokédex!
 
