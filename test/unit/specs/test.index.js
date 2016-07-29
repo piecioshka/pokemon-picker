@@ -1,6 +1,6 @@
 'use strict';
 
-var api = require('../../');
+var api = require('../../../');
 
 var constant = function (value) {
     return function () {

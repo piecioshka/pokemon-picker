@@ -17,8 +17,8 @@
     },
     "scripts": {
         "clear": "rm -rf node_modules/ npm-debug.log coverage/",
-        "test": "jasmine JASMINE_CONFIG_PATH=test/jasmine.json",
-        "coverage": "istanbul cover jasmine JASMINE_CONFIG_PATH=test/jasmine.json"
+        "test": "jasmine JASMINE_CONFIG_PATH=test/unit/jasmine.json",
+        "coverage": "istanbul cover jasmine JASMINE_CONFIG_PATH=test/unit/jasmine.json"
     },
     "bugs": {
         "url": "https://github.com/piecioshka/pokemon-picker/issues"

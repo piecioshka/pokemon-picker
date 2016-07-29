@@ -1,5 +1,5 @@
 {
-    "spec_dir": "test/specs",
+    "spec_dir": "test/unit/specs",
     "spec_files": [
         "test.*.js"
     ],
