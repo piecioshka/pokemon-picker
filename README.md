@@ -2,7 +2,6 @@
 
 [![npm version](https://badge.fury.io/js/pokemon-picker.svg)](https://badge.fury.io/js/pokemon-picker)
 ![](https://img.shields.io/npm/dt/pokemon-picker.svg)
-![](https://img.shields.io/badge/tests-10/10-brightgreen.svg)
 [![Travis](https://img.shields.io/travis/piecioshka/pokemon-picker.svg?maxAge=2592000)](https://travis-ci.org/piecioshka/pokemon-picker)
 
 > :art: Pick your Pokémon from Pokédex!
