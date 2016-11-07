@@ -1,6 +1,6 @@
 {
     "name": "pokemon-picker",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "Pick your Pokémon from Pokédex!",
     "author": {
         "name": "Piotr Kowalski",
@@ -26,6 +26,7 @@
     },
     "files": [
         "pokedex",
+        "cli.js",
         "index.js",
         "package.json",
         "README.md"
