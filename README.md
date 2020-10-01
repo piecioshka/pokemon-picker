@@ -10,7 +10,7 @@
 ![](./images/logo.png)
 
 I always have a problem for new project name.<br />
-I had simple an idea. I will create pokemon random getter.<br />
+I had a simple idea to create random pokemon generator.<br />
 So I make this project to randomly select Pokémon.
 
 I use [bulbapedia.bulbagarden.net][0] to get index, name and types.<br />
