@@ -18,8 +18,7 @@
     "scripts": {
         "clear": "rm -rf node_modules/ npm-debug.log coverage/",
         "test": "jasmine JASMINE_CONFIG_PATH=test/unit/jasmine.json",
-        "coverage": "istanbul cover jasmine JASMINE_CONFIG_PATH=test/unit/jasmine.json",
-        "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls -v"
+        "coverage": "istanbul cover jasmine JASMINE_CONFIG_PATH=test/unit/jasmine.json"
     },
     "bugs": {
         "url": "https://github.com/piecioshka/pokemon-picker/issues"
@@ -44,7 +43,6 @@
         "pokéball"
     ],
     "devDependencies": {
-        "coveralls": "^2.11.12",
         "istanbul": "^0.4.4",
         "jasmine": "^2.4.1"
     },
