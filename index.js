@@ -83,7 +83,7 @@ function byName(name) {
 /**
  * Returns random digit from section, between start and finish.
  *
- * @returns {Pokémon}
+ * @returns {Pokémon|undefined}
  */
 function randomize() {
     var index = Math.random() * (size() - 1);

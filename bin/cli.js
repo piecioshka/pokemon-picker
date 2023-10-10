@@ -1,9 +1,9 @@
 #! /usr/bin/env node
 'use strict';
 
-var picker = require('./index');
 var program = require('commander');
-var pkg = require('./package.json');
+var picker = require('../index');
+var pkg = require('../package.json');
 
 function display(method) {
     return function (args) {
