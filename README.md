@@ -1,8 +1,7 @@
 # pokemon-picker ([npm](https://www.npmjs.com/package/pokemon-picker))
 
 [![npm version](https://badge.fury.io/js/pokemon-picker.svg)](https://badge.fury.io/js/pokemon-picker)
-![](https://img.shields.io/npm/dt/pokemon-picker.svg)
-[![travis-ci](https://api.travis-ci.com/piecioshka/pokemon-picker.svg?branch=master)](https://app.travis-ci.com/github/piecioshka/pokemon-picker)
+![download count](https://img.shields.io/npm/dt/pokemon-picker.svg)
 
 :art: Pick your Pokémon from Pokédex!
 
