@@ -5,11 +5,11 @@
     "author": {
         "name": "Piotr Kowalski",
         "email": "piecioshka@gmail.com",
-        "url": "http://piecioshka.pl/"
+        "url": "https://piecioshka.pl/"
     },
     "contributors": [
-        "Piotr Kowalski <piecioshka@gmail.com> (http://github.com/piecioshka)",
-        "Adam Miniuk <adam.miniuk@gamil.com> (http://github.com/adamminiuk)"
+        "Piotr Kowalski <piecioshka@gmail.com> (https://github.com/piecioshka)",
+        "Adam Miniuk <adam.miniuk@gamil.com> (https://github.com/adamminiuk)"
     ],
     "repository": {
         "type": "git",

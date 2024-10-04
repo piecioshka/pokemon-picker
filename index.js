@@ -25,7 +25,7 @@ var pokemons = []
 /**
  * Add index field to returned Pokémon object.
  *
- * @param {Pokémon} [pokemon]
+ * @param {Pokémon} pokemon
  * @param {number} index
  * @returns {Pokémon|undefined}
  */

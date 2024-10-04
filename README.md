@@ -1,7 +1,9 @@
-# pokemon-picker ([npm](https://www.npmjs.com/package/pokemon-picker))
+# pokemon-picker
 
+[![node version](https://img.shields.io/node/v/pokemon-picker.svg)](https://www.npmjs.com/package/pokemon-picker)
 [![npm version](https://badge.fury.io/js/pokemon-picker.svg)](https://badge.fury.io/js/pokemon-picker)
-![download count](https://img.shields.io/npm/dt/pokemon-picker.svg)
+[![downloads count](https://img.shields.io/npm/dt/pokemon-picker.svg)](https://www.npmjs.com/package/pokemon-picker)
+[![license](https://img.shields.io/npm/l/pokemon-picker.svg)](https://www.npmjs.com/package/pokemon-picker)
 
 :art: Pick your Pokémon from Pokédex!
 
@@ -136,4 +138,4 @@ pokemon.randomize() // => { "index": 38, "name": "Ninetales", "types": ["Fire"] 
 
 [The MIT License](https://piecioshka.mit-license.org) @ 2014
 
-[0]: http://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number
+[0]: https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number
