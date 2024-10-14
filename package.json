@@ -50,7 +50,9 @@
     "dependencies": {
         "commander": "^2.9.0"
     },
-    "bin": "./bin/cli.js",
+    "bin": {
+        "pokemon-picker": "bin/cli.js"
+    },
     "main": "./index.js",
     "license": "MIT"
 }
