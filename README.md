@@ -6,7 +6,7 @@
 [![license](https://img.shields.io/npm/l/pokemon-picker.svg)](https://piecioshka.mit-license.org)
 [![github-ci](https://github.com/piecioshka/pokemon-picker/actions/workflows/testing.yml/badge.svg)](https://github.com/piecioshka/pokemon-picker/actions/workflows/testing.yml)
 
-:art: Pick your Pokémon from Pokédex!
+🎨 Pick your Pokémon from Pokédex!
 
 ![](./images/logo.png)
 
