@@ -4,6 +4,7 @@
 [![npm version](https://badge.fury.io/js/pokemon-picker.svg)](https://badge.fury.io/js/pokemon-picker)
 [![downloads count](https://img.shields.io/npm/dt/pokemon-picker.svg)](https://www.npmjs.com/package/pokemon-picker)
 [![license](https://img.shields.io/npm/l/pokemon-picker.svg)](https://piecioshka.mit-license.org)
+[![github-ci](https://github.com/piecioshka/pokemon-picker/actions/workflows/testing.yml/badge.svg)](https://github.com/piecioshka/pokemon-picker/actions/workflows/testing.yml)
 
 :art: Pick your Pokémon from Pokédex!
 
