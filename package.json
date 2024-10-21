@@ -2,6 +2,7 @@
     "name": "pokemon-picker",
     "version": "1.2.7",
     "description": "🎨 Pick your Pokémon from Pokédex!",
+    "license": "MIT",
     "author": {
         "name": "Piotr Kowalski",
         "email": "piecioshka@gmail.com",
@@ -53,6 +54,5 @@
     "bin": {
         "pokemon-picker": "bin/cli.js"
     },
-    "main": "./index.js",
-    "license": "MIT"
+    "main": "./index.js"
 }
