@@ -1,5 +1,6 @@
 # pokemon-picker
 
+[![cli-available](https://badgen.net/static/cli/available/?icon=terminal)](https://runkit.com/npm/pokemon-picker)
 [![node version](https://img.shields.io/node/v/pokemon-picker.svg)](https://www.npmjs.com/package/pokemon-picker)
 [![npm version](https://badge.fury.io/js/pokemon-picker.svg)](https://badge.fury.io/js/pokemon-picker)
 [![downloads count](https://img.shields.io/npm/dt/pokemon-picker.svg)](https://www.npmjs.com/package/pokemon-picker)
@@ -33,19 +34,11 @@ _  .___/\____//_/|_| \___//_/ /_/ /_/\____//_/ /_/     _  .___//_/  \___/ /_/|_|
 
 ## CLI
 
-After global installation:
+Installation:
 
 ```bash
 npm install -g pokemon-picker
 ```
-
-... you can CHOOSE random Pokémon by simple command:
-
-```bash
-pokemon-picker
-```
-
-... or print help with details:
 
 ```bash
 pokemon-picker --help
@@ -66,13 +59,13 @@ pokemon-picker --help
     -s             Return number of database size
 ```
 
-## Install
+## Usage (in code)
+
+Installation:
 
 ```bash
 npm install pokemon-picker
 ```
-
-## Usage (in code)
 
 ```javascript
 var pokemon = require('pokemon-picker');
