@@ -32,34 +32,7 @@ _  .___/\____//_/|_| \___//_/ /_/ /_/\____//_/ /_/     _  .___//_/  \___/ /_/|_|
 
 ----
 
-## CLI
-
-Installation:
-
-```bash
-npm install -g pokemon-picker
-```
-
-```bash
-pokemon-picker --help
-
-  Usage: pokemon-picker [options]
-
-  Pick your Pokémon from Pokédex!
-
-  Options:
-
-    -h, --help     output usage information
-    -V, --version  output the version number
-    -a             Get whole list of Pokémons
-    -i [index]     Get Pokémon by index
-    -n [name]      Get Pokémon by name
-    -t [type]      Get Pokémons by type
-    -r             Return random Pokémon
-    -s             Return number of database size
-```
-
-## Usage (in code)
+## Usage
 
 Installation:
 
@@ -107,6 +80,33 @@ Return random "Pokémon" from whole list.
 ### `pokemon.size(): number`
 
 Return number of Pokémon's, which are available in database.
+
+## CLI
+
+Installation:
+
+```bash
+npm install -g pokemon-picker
+```
+
+```bash
+pokemon-picker --help
+
+  Usage: pokemon-picker [options]
+
+  Pick your Pokémon from Pokédex!
+
+  Options:
+
+    -h, --help     output usage information
+    -V, --version  output the version number
+    -a             Get whole list of Pokémons
+    -i [index]     Get Pokémon by index
+    -n [name]      Get Pokémon by name
+    -t [type]      Get Pokémons by type
+    -r             Return random Pokémon
+    -s             Return number of database size
+```
 
 ## Examples
 
