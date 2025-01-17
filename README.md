@@ -1,6 +1,6 @@
 # pokemon-picker
 
-[![cli-available](https://badgen.net/static/cli/available/?icon=terminal)](https://runkit.com/npm/pokemon-picker)
+[![cli-available](https://badgen.net/static/cli/available/?icon=terminal)](#cli)
 [![node version](https://img.shields.io/node/v/pokemon-picker.svg)](https://www.npmjs.com/package/pokemon-picker)
 [![npm version](https://badge.fury.io/js/pokemon-picker.svg)](https://badge.fury.io/js/pokemon-picker)
 [![downloads count](https://img.shields.io/npm/dt/pokemon-picker.svg)](https://www.npmjs.com/package/pokemon-picker)
