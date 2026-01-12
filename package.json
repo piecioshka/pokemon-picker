@@ -51,6 +51,9 @@
     "dependencies": {
         "minimist": "^1.2.8"
     },
+    "engines": {
+      "node": ">=18.0.0"
+    },
     "bin": {
         "pokemon-picker": "bin/cli.js"
     },
