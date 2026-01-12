@@ -51,6 +51,10 @@ if (argv.a) {
 // Handle -i [index] (by index)
 if (argv.i !== undefined) {
     var index = parseInt(argv.i, 10);
+    if (isNaN(index)) {
+        console.error('Error: Index must be a valid number');
+        process.exit(1);
+    }
     console.log(picker.byIndex(index));
     process.exit(0);
 }
@@ -80,6 +84,10 @@ if (argv.s) {
 }
 
 // Default mode: no arguments provided
-if (process.argv.slice(2).length === 0) {
+// Check if no valid options were processed
+var hasValidOption = argv.version || argv.help || argv.a || argv.i !== undefined || 
+                      argv.n !== undefined || argv.t !== undefined || argv.r || argv.s;
+
+if (!hasValidOption) {
     console.log(picker.randomize());
 }
