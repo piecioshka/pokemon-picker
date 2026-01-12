@@ -89,14 +89,17 @@ if (argv.s) {
 
 // Default mode: no arguments provided
 // Check if no valid options were processed
-var validOptions = ['version', 'help', 'a', 'i', 'n', 't', 'r', 's'];
-var hasValidOption = validOptions.some(function(opt) {
-    var value = argv[opt];
-    // For boolean options, check if they're true
-    // For string options, check if they're defined
-    return value === true || (typeof value === 'string' && value !== '');
+var booleanOptions = ['version', 'help', 'a', 'r', 's'];
+var stringOptions = ['i', 'n', 't'];
+
+var hasBooleanOption = booleanOptions.some(function(opt) {
+    return argv[opt] === true;
 });
 
-if (!hasValidOption) {
+var hasStringOption = stringOptions.some(function(opt) {
+    return typeof argv[opt] === 'string' && argv[opt] !== '';
+});
+
+if (!hasBooleanOption && !hasStringOption) {
     console.log(picker.randomize());
 }
