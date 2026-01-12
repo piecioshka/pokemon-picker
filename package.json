@@ -18,8 +18,8 @@
     },
     "scripts": {
         "clear": "rm -rf node_modules/ npm-debug.log coverage/",
-        "test": "jasmine JASMINE_CONFIG_PATH=test/unit/jasmine.json",
-        "coverage": "nyc npm run test && nyc report --reporter=html"
+        "test": "jest",
+        "coverage": "jest --coverage"
     },
     "bugs": {
         "url": "https://github.com/piecioshka/pokemon-picker/issues"
@@ -45,7 +45,8 @@
         "pokéball"
     ],
     "devDependencies": {
-        "jasmine": "^2.4.1",
+        "@types/jest": "^30.0.0",
+        "jest": "^30.2.0",
         "nyc": "^17.1.0"
     },
     "dependencies": {

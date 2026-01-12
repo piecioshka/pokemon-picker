@@ -11,7 +11,7 @@ var constant = function (value) {
 describe('Working properly', function () {
     describe('property all', function () {
         it('should by an array of creatures', function () {
-            expect(api.all()).toEqual(jasmine.any(Array));
+            expect(api.all()).toEqual(expect.any(Array));
             expect(api.all().length).toEqual(api.size());
             expect(api.all()[5]).toEqual(api.at(6));
             expect(api.all()[5]).toEqual(api.byIndex(6));
@@ -84,7 +84,7 @@ describe('Working properly', function () {
 
     describe('method: size', function () {
         it('should return number of items', function () {
-            expect(api.size()).toEqual(jasmine.any(Number));
+            expect(api.size()).toEqual(expect.any(Number));
             expect(api.size()).toEqual(756); // all known pokemons
         });
     })
