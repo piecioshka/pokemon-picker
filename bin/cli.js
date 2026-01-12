@@ -1,31 +1,85 @@
 #! /usr/bin/env node
 'use strict';
 
-var program = require('commander');
+var minimist = require('minimist');
 var picker = require('../index');
 var pkg = require('../package.json');
 
-function display(method) {
-    return function (args) {
-        var result = method(args);
-        console.log(result);
+var argv = minimist(process.argv.slice(2), {
+    boolean: ['a', 'r', 's', 'V', 'version', 'h', 'help'],
+    string: ['i', 'n', 't'],
+    alias: {
+        V: 'version',
+        h: 'help'
     }
+});
+
+function showHelp() {
+    console.log('Usage: pokemon-picker [options]');
+    console.log('');
+    console.log(pkg.description);
+    console.log('');
+    console.log('Options:');
+    console.log('  -V, --version  output the version number');
+    console.log('  -a             Get whole list of Pokémons');
+    console.log('  -i [index]     Get Pokémon by index');
+    console.log('  -n [name]      Get Pokémon by name');
+    console.log('  -t [type]      Get Pokémons by type');
+    console.log('  -r             Return random Pokémon');
+    console.log('  -s             Return number of database size');
+    console.log('  -h, --help     output usage information');
 }
 
-program
-    .version(pkg.version)
-    .description(pkg.description)
-    .option('-a', 'Get whole list of Pokémons', display(picker.all))
-    .option('-i [index]', 'Get Pokémon by index', display(picker.byIndex))
-    .option('-n [name]', 'Get Pokémon by name', display(picker.byName))
-    .option('-t [type]', 'Get Pokémons by type', display(picker.byType))
-    .option('-r', 'Return random Pokémon', display(picker.randomize))
-    .option('-s', 'Return number of database size', display(picker.size))
-    .parse(process.argv);
+// Handle --version or -V
+if (argv.version) {
+    console.log(pkg.version);
+    process.exit(0);
+}
 
-// Default mode.
-if (!process.argv.slice(2).length) {
-    // program.help();
-    // display(picker.randomize)();
+// Handle --help or -h
+if (argv.help) {
+    showHelp();
+    process.exit(0);
+}
+
+// Handle -a (all)
+if (argv.a) {
+    console.log(picker.all());
+    process.exit(0);
+}
+
+// Handle -i [index] (by index)
+if (argv.i !== undefined) {
+    var index = parseInt(argv.i, 10);
+    console.log(picker.byIndex(index));
+    process.exit(0);
+}
+
+// Handle -n [name] (by name)
+if (argv.n !== undefined) {
+    console.log(picker.byName(argv.n));
+    process.exit(0);
+}
+
+// Handle -t [type] (by type)
+if (argv.t !== undefined) {
+    console.log(picker.byType(argv.t));
+    process.exit(0);
+}
+
+// Handle -r (random)
+if (argv.r) {
+    console.log(picker.randomize());
+    process.exit(0);
+}
+
+// Handle -s (size)
+if (argv.s) {
+    console.log(picker.size());
+    process.exit(0);
+}
+
+// Default mode: no arguments provided
+if (process.argv.slice(2).length === 0) {
     console.log(picker.randomize());
 }

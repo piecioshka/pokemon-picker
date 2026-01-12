@@ -49,7 +49,7 @@
         "nyc": "^17.1.0"
     },
     "dependencies": {
-        "commander": "^2.9.0"
+        "minimist": "^1.2.8"
     },
     "bin": {
         "pokemon-picker": "bin/cli.js"
