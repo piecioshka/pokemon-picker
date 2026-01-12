@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @typedef {Object} Pokémon
  *
@@ -8,19 +6,27 @@
  * @property {Array<string>} types
  */
 
-var gen1 = require('./pokedex/generation-1.json');
-var gen2 = require('./pokedex/generation-2.json');
-var gen3 = require('./pokedex/generation-3.json');
-var gen4 = require('./pokedex/generation-4.json');
-var gen5 = require('./pokedex/generation-5.json');
-var gen6 = require('./pokedex/generation-6.json');
-var gen7 = require('./pokedex/generation-7.json');
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const gen1 = JSON.parse(readFileSync(join(__dirname, './pokedex/generation-1.json'), 'utf-8'));
+const gen2 = JSON.parse(readFileSync(join(__dirname, './pokedex/generation-2.json'), 'utf-8'));
+const gen3 = JSON.parse(readFileSync(join(__dirname, './pokedex/generation-3.json'), 'utf-8'));
+const gen4 = JSON.parse(readFileSync(join(__dirname, './pokedex/generation-4.json'), 'utf-8'));
+const gen5 = JSON.parse(readFileSync(join(__dirname, './pokedex/generation-5.json'), 'utf-8'));
+const gen6 = JSON.parse(readFileSync(join(__dirname, './pokedex/generation-6.json'), 'utf-8'));
+const gen7 = JSON.parse(readFileSync(join(__dirname, './pokedex/generation-7.json'), 'utf-8'));
 
 // List of 756 Pokémons.
-var pokemons = []
-    .concat(gen1).concat(gen2).concat(gen3)
-    .concat(gen4).concat(gen5).concat(gen6)
-    .concat(gen7).map(setupIndex);
+const pokemons = [
+    ...gen1, ...gen2, ...gen3,
+    ...gen4, ...gen5, ...gen6,
+    ...gen7
+].map(setupIndex);
 
 /**
  * Add index field to returned Pokémon object.
@@ -40,7 +46,7 @@ function setupIndex(pokemon, index) {
  * @returns {Array<Pokémon>}
  */
 function all() {
-    return pokemons
+    return pokemons;
 }
 
 /**
@@ -63,9 +69,7 @@ function at(index) {
  * @returns {Array<Pokémon>}
  */
 function byType(type) {
-    return pokemons.filter(function (pokemon) {
-        return pokemon.types.indexOf(type) !== -1;
-    });
+    return pokemons.filter((pokemon) => pokemon.types.includes(type));
 }
 
 /**
@@ -75,9 +79,7 @@ function byType(type) {
  * @returns {Pokémon|undefined} Return first Pokémon on the list (probably this list should be never bigger that 1.
  */
 function byName(name) {
-    return pokemons.filter(function (pokemon) {
-        return pokemon.name === name;
-    })[0];
+    return pokemons.find((pokemon) => pokemon.name === name);
 }
 
 /**
@@ -86,7 +88,7 @@ function byName(name) {
  * @returns {Pokémon|undefined}
  */
 function randomize() {
-    var index = Math.random() * (size() - 1);
+    let index = Math.random() * (size() - 1);
 
     // Cast semi-random index from float to integer.
     index = parseInt(index, 10);
@@ -105,12 +107,12 @@ function size() {
 
 // Public API
 
-module.exports = {
-    all: all,
-    at: at,
+export default {
+    all,
+    at,
     byIndex: at,
-    byName: byName,
-    byType: byType,
-    randomize: randomize,
-    size: size
+    byName,
+    byType,
+    randomize,
+    size
 };

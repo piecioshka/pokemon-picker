@@ -1,11 +1,16 @@
 #! /usr/bin/env node
-'use strict';
 
-var minimist = require('minimist');
-var picker = require('../index');
-var pkg = require('../package.json');
+import minimist from 'minimist';
+import picker from '../index.js';
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-var argv = minimist(process.argv.slice(2), {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const pkg = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8'));
+
+const argv = minimist(process.argv.slice(2), {
     boolean: ['a', 'r', 's', 'V', 'version', 'h', 'help'],
     string: ['i', 'n', 't'],
     alias: {
@@ -54,7 +59,7 @@ if (argv.i !== undefined) {
         console.error('Error: -i option requires an index value');
         process.exit(1);
     }
-    var index = parseInt(argv.i, 10);
+    const index = parseInt(argv.i, 10);
     if (isNaN(index)) {
         console.error('Error: Index must be a valid number');
         process.exit(1);
@@ -89,16 +94,12 @@ if (argv.s) {
 
 // Default mode: no arguments provided
 // Check if no valid options were processed
-var booleanOptions = ['version', 'help', 'a', 'r', 's'];
-var stringOptions = ['i', 'n', 't'];
+const booleanOptions = ['version', 'help', 'a', 'r', 's'];
+const stringOptions = ['i', 'n', 't'];
 
-var hasBooleanOption = booleanOptions.some(function(opt) {
-    return argv[opt] === true;
-});
+const hasBooleanOption = booleanOptions.some((opt) => argv[opt] === true);
 
-var hasStringOption = stringOptions.some(function(opt) {
-    return typeof argv[opt] === 'string' && argv[opt] !== '';
-});
+const hasStringOption = stringOptions.some((opt) => typeof argv[opt] === 'string' && argv[opt] !== '');
 
 if (!hasBooleanOption && !hasStringOption) {
     console.log(picker.randomize());

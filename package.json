@@ -2,6 +2,7 @@
     "name": "pokemon-picker",
     "version": "1.2.10",
     "description": "🎨 Pick your Pokémon from Pokédex!",
+    "type": "module",
     "license": "MIT",
     "author": {
         "name": "Piotr Kowalski",
@@ -18,8 +19,8 @@
     },
     "scripts": {
         "clear": "rm -rf node_modules/ npm-debug.log coverage/",
-        "test": "jest",
-        "coverage": "jest --coverage"
+        "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+        "coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage"
     },
     "bugs": {
         "url": "https://github.com/piecioshka/pokemon-picker/issues"
