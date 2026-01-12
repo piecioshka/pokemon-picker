@@ -50,6 +50,10 @@ if (argv.a) {
 
 // Handle -i [index] (by index)
 if (argv.i !== undefined) {
+    if (argv.i === true || argv.i === '') {
+        console.error('Error: -i option requires an index value');
+        process.exit(1);
+    }
     var index = parseInt(argv.i, 10);
     if (isNaN(index)) {
         console.error('Error: Index must be a valid number');
@@ -85,8 +89,13 @@ if (argv.s) {
 
 // Default mode: no arguments provided
 // Check if no valid options were processed
-var hasValidOption = argv.version || argv.help || argv.a || argv.i !== undefined || 
-                      argv.n !== undefined || argv.t !== undefined || argv.r || argv.s;
+var validOptions = ['version', 'help', 'a', 'i', 'n', 't', 'r', 's'];
+var hasValidOption = validOptions.some(function(opt) {
+    var value = argv[opt];
+    // For boolean options, check if they're true
+    // For string options, check if they're defined
+    return value === true || (typeof value === 'string' && value !== '');
+});
 
 if (!hasValidOption) {
     console.log(picker.randomize());
