@@ -124,6 +124,4 @@ pokemon.randomize(); // => { "index": 38, "name": "Ninetales", "types": ["Fire"]
 
 ## License
 
-[The MIT License](https://piecioshka.mit-license.org) @ 2014
-
-[0]: https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number
+[The MIT License](http://piecioshka.mit-license.org) @ 2026
